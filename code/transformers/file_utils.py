@@ -58,13 +58,13 @@ except ImportError:
 try:
     from pathlib import Path
     PYTORCH_PRETRAINED_BERT_CACHE = Path(
-        os.getenv('PYTORCH_TRANSFORMERS_CACHE', os.getenv('PYTORCH_PRETRAINED_BERT_CACHE', default_cache_path)))
+        os.getenv('transformers_CACHE', os.getenv('PYTORCH_PRETRAINED_BERT_CACHE', default_cache_path)))
 except (AttributeError, ImportError):
-    PYTORCH_PRETRAINED_BERT_CACHE = os.getenv('PYTORCH_TRANSFORMERS_CACHE',
+    PYTORCH_PRETRAINED_BERT_CACHE = os.getenv('transformers_CACHE',
                                               os.getenv('PYTORCH_PRETRAINED_BERT_CACHE',
                                                         default_cache_path))
 
-PYTORCH_TRANSFORMERS_CACHE = PYTORCH_PRETRAINED_BERT_CACHE  # Kept for backward compatibility
+transformers_CACHE = PYTORCH_PRETRAINED_BERT_CACHE  # Kept for backward compatibility
 TRANSFORMERS_CACHE = PYTORCH_PRETRAINED_BERT_CACHE  # Kept for backward compatibility
 
 WEIGHTS_NAME = "pytorch_model.bin"
